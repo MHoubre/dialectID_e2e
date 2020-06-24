@@ -47,7 +47,6 @@ def feat_extract(filelist,feat_type,n_fft_length=512,hop=160,vad=True,cmvn=False
     utt_shape = []
     new_utt_label =[]
     for index,wavname in enumerate(filelist):
-        print wavname
         #read audio input
         y, sr = librosa.core.load(wavname,sr=16000,mono=True,dtype='float')
 
@@ -141,7 +140,7 @@ def run_on_dataset(filename,feat_type, show=False):
     feat, utt_label, utt_shape, tffilename = feat_extract(filename,feat_type,N_FFT,HOP,VAD,CMVN,EXCLUDE_SHORT)
 
     elapsed_time = time.time() - start_time
-    print format(elapsed_time) + ' seconds'
+    print(format(elapsed_time) + ' seconds')
 
 
     start_time = time.time()
@@ -155,7 +154,7 @@ def run_on_dataset(filename,feat_type, show=False):
 
 
     elapsed_time = time.time() - start_time
-    print format(elapsed_time) + ' seconds'
+    print(format(elapsed_time) + ' seconds')
 
     # Print out the results in barplot
 
